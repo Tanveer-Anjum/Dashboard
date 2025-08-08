@@ -10,6 +10,7 @@ import {
   useDisclosure,
   Button,
 } from '@chakra-ui/react'
+import Sidenav from './Sidenav'
 
 
 
@@ -21,25 +22,19 @@ function SideDrawer({isOpen, onClose}) {
       
       <Drawer
         isOpen={isOpen}
-        placement='right'
+        placement='left'
         onClose={onClose}
       
       >
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Create your account</DrawerHeader>
 
           <DrawerBody>
-          
+          <Sidenav></Sidenav>
           </DrawerBody>
 
-          <DrawerFooter>
-            <Button variant='outline' mr={3} onClick={onClose}>
-              Cancel
-            </Button>
-            <Button colorScheme='blue'>Save</Button>
-          </DrawerFooter>
+       
         </DrawerContent>
       </Drawer>
     </>

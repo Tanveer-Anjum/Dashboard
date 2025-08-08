@@ -23,13 +23,14 @@ function Sidenav() {
   return (
     <Stack
  
-      boxShadow={"lg"}
-      width="250px"
+     
+    //   width="250px"
       height="100vh"
       bg="white"
       zIndex={1000}
-    //   position="fixed"
-      display={{ base: "none", md: "flex" }} // 👈 hides on small screens
+    // //   position="fixed"
+      boxShadow={{ base: "none", lg: "lg" }} // 👈 hides on small screens
+      w ={{base:"full", lg:"250px"}}
     >
       <Heading as="h1" p={4} textAlign='center' fontWeight='bold'>
         @Bazario

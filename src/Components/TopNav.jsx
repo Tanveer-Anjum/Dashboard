@@ -22,7 +22,8 @@ function TopNav({ title,onOpen }) {
       p={4}
       px={6}
       top="0"
-     
+      bg={"white"}
+ 
 
     >
     

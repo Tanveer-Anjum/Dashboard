@@ -10,17 +10,24 @@ function DashboardLayout({ title, children }) {
   return (
     <Flex>
       {/* Sidebar */}
-      <Sidenav />
+      
+
+      <Box 
+      
+      display={{ base: "none", md: "flex" }} // 👈 hides on small screens
+      >
+        <Sidenav />
+      </Box>
       <SideDrawer isOpen={isOpen} onClose={onClose}  />
 
       {/* Main Content */}
       <Box
         w="full"
-        ml={{ base: 0, md: "250px" }} // 👈 Add margin-left only on large screens
+        // ml={{ base: 0, md: "0" }} // 👈 Add margin-left only on large screens
       >
         <TopNav title={title} onOpen={onOpen} />
 
-        <Container maxW="container.xl" p={4}>
+        <Container maxW="960px" mt={"20px"} p={4}  borderRadius={8} boxShadow="lg" bg="white">
           {children}
         </Container>
       </Box>

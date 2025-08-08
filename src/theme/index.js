@@ -7,6 +7,14 @@ const theme = extendTheme({
     heading: `Ubuntu`,
     body:  "Ubuntu",
   },
+  styles: {
+    global: {
+      'html, body': {
+        bg: 'gray.200',
+      },
+    },
+  },
+
 })
 
 export default theme
