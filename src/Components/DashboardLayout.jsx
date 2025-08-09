@@ -27,7 +27,7 @@ function DashboardLayout({ title, children }) {
       >
         <TopNav title={title} onOpen={onOpen} />
 
-        <Container maxW="960px" mt={"20px"} p={4}  borderRadius={8} boxShadow="lg" bg="white">
+        <Container maxW="960px" mt={"20px"} p={4}  borderRadius={8} boxShadow="lg">
           {children}
         </Container>
       </Box>
