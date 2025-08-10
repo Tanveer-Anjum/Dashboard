@@ -2,6 +2,7 @@ import { Box, Grid, GridItem } from "@chakra-ui/react";
 import DashboardLayout from "../../Components/DashboardLayout";
 import Portfoli from "./Components/Portfoli";
 import PricingCard from "./Components/PricingCard";
+import Transection from "./Components/Transection";
 
 function Dashboard() {
   return (
@@ -23,6 +24,9 @@ function Dashboard() {
   {/* PricingCard half width on desktop, full on mobile */}
   <GridItem colSpan={{ base: 1, md: 1 }}>
     <PricingCard />
+  </GridItem>
+    <GridItem colSpan={{ base: 1, md: 1 }}>
+    <Transection />
   </GridItem>
 </Grid>
 
