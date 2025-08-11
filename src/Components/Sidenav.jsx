@@ -3,6 +3,7 @@ import { Box, Heading, HStack, Icon, Stack, Text } from '@chakra-ui/react'
 import { BiBarChartSquare } from "react-icons/bi";
 import { CgArrowsExpandRight } from "react-icons/cg";
 import { MdSupportAgent } from "react-icons/md";
+import { Link, Links } from 'react-router-dom';
 
 
 function Sidenav() {
@@ -16,7 +17,7 @@ function Sidenav() {
     {
       text: "Transaction",
       icon: <CgArrowsExpandRight />,
-      link: "/transaction"
+      link: "/Transectionpage"
     }
   ];
 
@@ -38,8 +39,9 @@ function Sidenav() {
 
       <Box p={4}>
         {sidenavItems.map((nav, index) => (
+          <Link to={nav.link}  key={index}>
           <HStack
-            key={index}
+           
             spacing={4}
             p={4}
             _hover={{ bg: "gray.100" }}
@@ -52,10 +54,12 @@ function Sidenav() {
             {nav.icon}
             <Text>{nav.text}</Text>
           </HStack>
+          </Link>
         ))}
       </Box>
 
       <Box mt="auto" p={4}>
+        <Link to='/Support'>
         <HStack
           spacing={4}
           p={4}
@@ -67,7 +71,9 @@ function Sidenav() {
           <MdSupportAgent />
           <Text>Support</Text>
         </HStack>
+        </Link>
       </Box>
+     
     </Stack>
   );
 }

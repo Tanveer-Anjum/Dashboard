@@ -37,7 +37,7 @@ function Transection() {
   ];
 
   return (
-    <CustomCard>
+    <CustomCard h={'full'}>
       <Text fontWeight="bold" fontSize="lg" mb={3}>
         Transactions
       </Text>

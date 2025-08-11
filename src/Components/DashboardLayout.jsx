@@ -1,38 +1,39 @@
 import React from 'react'
 import Sidenav from './Sidenav'
 import TopNav from './TopNav'
-import { Box, Flex, Container, useDisclosure } from '@chakra-ui/react'
+import { Box, Flex, Container, useDisclosure, calc } from '@chakra-ui/react'
 import SideDrawer from './sideDrawer'
 
+
 function DashboardLayout({ title, children }) {
-    const {isOpen, onOpen, onClose} = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
-    <Flex>
+    <Flex h="100vh" overflow="hidden">
       {/* Sidebar */}
-      
-
-      <Box 
-      
-      display={{ base: "none", md: "flex" }} // 👈 hides on small screens
-      >
+      <Box display={{ base: "none", md: "flex" }} h="100%">
         <Sidenav />
       </Box>
-      <SideDrawer isOpen={isOpen} onClose={onClose}  />
+
+      <SideDrawer isOpen={isOpen} onClose={onClose} />
 
       {/* Main Content */}
-      <Box
-        w="full"
-        // ml={{ base: 0, md: "0" }} // 👈 Add margin-left only on large screens
-      >
+      <Box w="full" display="flex" flexDirection="column">
         <TopNav title={title} onOpen={onOpen} />
 
-        <Container maxW="960px" mt={"20px"} p={4}  borderRadius={8} boxShadow="lg">
+        {/* Scrollable Content */}
+        <Box
+          flex="1"
+          overflowY="auto"
+          p={4}
+          bg="gray.400"
+          borderRadius={8}
+          boxShadow="lg"
+        >
           {children}
-        </Container>
+        </Box>
       </Box>
     </Flex>
-  )
+  );
 }
-
-export default DashboardLayout
+export default DashboardLayout;
